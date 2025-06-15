@@ -6,3 +6,6 @@ def run(df, _):
     df['age'].hist(bins=10)
     plt.title("Age Distribution")
     plt.savefig("outputs/plots.png")
+    plt.close()
+    print("Plot saved as outputs/plots.png")
+ 
