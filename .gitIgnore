@@ -1,0 +1,6 @@
+#Ignore Ds_Store files
+.DS_Store
+# Ignore contents of input directory
+input/*
+# Ignore contents of output directory
+output/*
