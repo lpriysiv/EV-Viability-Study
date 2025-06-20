@@ -1,5 +1,11 @@
 # === requirements.txt ===
+kagglehub[pandas-datasets]
+numpy
 pandas
 requests
 matplotlib
+seaborn
 streamlit
+folium
+streamlit-folium
+scikit-learn
