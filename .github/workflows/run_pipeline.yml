@@ -30,6 +30,6 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
-          git add outputs/
-          git commit -m "Update outputs" || echo "No changes to commit"
+          git add output/
+          git commit -m "Update output" || echo "No changes to commit"
           git push    
