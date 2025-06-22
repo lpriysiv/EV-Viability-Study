@@ -5,7 +5,7 @@ import numpy as np
 from datetime import datetime
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
-
+from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
 
 def run():
     local_file_path = "input/ev_list.csv"
@@ -65,9 +65,14 @@ def run():
         model = LinearRegression()
         model.fit(X, y)        
         # Predict values for the trend line
-        trend_line = model.predict(X)        
+        trend_line = model.predict(X)       
+        # Evaluate the model's performance
+        # Print the model's r2 and mean absolute error
+        print(f"Category: {category}, R^2 Score: {r2_score(y, trend_line)}, Mean Absolute Error: {mean_absolute_error(y, trend_line)}, Root Mean Squared Error: {mean_squared_error(y, trend_line)}")
+
         # Plot the regression line and match the color of the actual value line
         plt.plot(category_trends_pivot['Model Year'], trend_line, linestyle='--', color=plt.gca().lines[-1].get_color(), label=f'{category} Regression Line')
+ 
         #Show markers with value for each category for each year
         for i, value in enumerate(category_trends_pivot[category]):
             plt.text(category_trends_pivot['Model Year'][i], value, str(int(value)), ha='center', va='bottom')
@@ -116,6 +121,9 @@ def run():
         model.fit(X, y)        
         # Predict values for the trend line
         trend_line = model.predict(X)        
+        # Evaluate the model's performance
+        # Print the model's score
+        print(f"Seating Capacity: {seating_capacity}, R^2 Score: {r2_score(y, trend_line)}, Mean Absolute Error: {mean_absolute_error(y, trend_line)}, Root Mean Squared Error: {mean_squared_error(y, trend_line)}")
         # Plot the regression line and match the color of the actual value line
         plt.plot(seating_capacity_trends_pivot['Model Year'], trend_line, linestyle='--', color=plt.gca().lines[-1].get_color(), label=f'{seating_capacity} Regression Line')
         #Show markers with value for each category for each year
