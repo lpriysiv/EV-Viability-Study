@@ -7,3 +7,4 @@ matplotlib
 streamlit
 folium
 scikit-learn
+mlxtend

@@ -1,15 +1,7 @@
-import os
-import requests
 import pandas as pd
 import numpy as np
 from datetime import datetime
 import matplotlib.pyplot as plt
-
-def get_value_from_range(value):
-    if isinstance(value, str) and '-' in value:
-        lower, _ = value.split('-')
-        return int(lower)
-    return int(value)
 
 
 def run():
