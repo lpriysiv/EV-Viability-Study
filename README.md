@@ -1,5 +1,5 @@
 # EV-Viability-Study
-## 📐 Architecture Diagram (Markdown-Friendly)
+## Architecture Diagram 
 ```
 +----------------------+
 |    GitHub Actions    |  ← Triggers pipeline
