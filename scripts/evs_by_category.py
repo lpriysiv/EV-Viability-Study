@@ -15,7 +15,7 @@ def get_value_from_range(value):
 def run():
     #Fetch the ev data from NREL API
     key=os.getenv("NREL_API_KEY")
-    response = requests.get(f"https://developer.nrl.gov/api/vehicles/v1/light_duty_automobiles.csv?api_key={key}&fuel_id=41")
+    response = requests.get(f"http://developer.nlr.gov/api/vehicles/v1/light_duty_automobiles.csv?api_key={key}&fuel_id=41")
     local_file_path = "input/ev_list.csv"
     with open(local_file_path, 'wb') as f:
         for chunk in response.iter_content(chunk_size=8192):
