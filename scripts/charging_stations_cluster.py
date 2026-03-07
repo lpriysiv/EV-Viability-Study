@@ -19,7 +19,7 @@ def evaluate_clustering(coordinates, labels):
 def run():
     #Fetch the charging stations data from NREL API
     key=os.getenv("NREL_API_KEY")
-    response = requests.get(f"https://developer.nrel.gov/api/alt-fuel-stations/v1?api_key={key}&format=csv&status=E&fuel_type=ELEC&access=public&country=US&ev_connector_type=J1772,J1772COMBO")
+    response = requests.get(f"http://developer.nlr.gov/api/alt-fuel-stations/v1?api_key={key}&format=csv&status=E&fuel_type=ELEC&access=public&country=US&ev_connector_type=J1772,J1772COMBO")
     local_file_path = "input/fuel_stations.csv"
     with open(local_file_path, 'wb') as f:
          for chunk in response.iter_content(chunk_size=8192):
