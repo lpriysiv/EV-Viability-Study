@@ -13,7 +13,7 @@ def run():
     if not os.path.exists(local_file_path):
         print("Downloading EV data from NREL API...")
         key=os.getenv("NREL_API_KEY")
-        response = requests.get(f"https://developer.nrel.gov/api/vehicles/v1/light_duty_automobiles.csv?api_key={key}&fuel_id=41")
+        response = requests.get(f"https://developer.nrl.gov/api/vehicles/v1/light_duty_automobiles.csv?api_key={key}&fuel_id=41")
         with open(local_file_path, 'wb') as f:
             for chunk in response.iter_content(chunk_size=8192):
                 f.write(chunk)
